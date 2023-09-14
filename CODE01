@@ -1,0 +1,44 @@
+import java.util.Scanner;
+
+
+public class Score {
+    public static void main(String[] args){
+        int n,num=0;
+        Scanner s=new Scanner(System.in);
+        System.out.println("Enter number of matches to record the score:");
+        n=s.nextInt();
+        int[] array=new int[10];
+        System.out.println("Enter the score for matches:");
+        for(int i=0;i<n;i++)
+        {
+            array[i]=s.nextInt();
+            if(array[i]<0)
+            {System.out.println("NEGATIVE SCORES ARE NOT ALLOWED");
+                break;
+            }
+        }
+        System.out.println("The scores are:");
+        for(int i=0;i<n;i++)
+        {
+            System.out.println(array[i]);
+            if(array[i]<0)
+            {System.out.println("NEGATIVE SCORES ARE NOT ALLOWED");
+                break;
+            }
+        }
+        int total_score=0,avg=0;
+        for(int i=0;i<n;i++)
+        {
+            if(array[i]>0){
+                total_score=total_score+array[i];
+                avg=total_score/(i+1);num=i+1;
+            }
+        }
+        System.out.println("No of matches are:");
+        System.out.println(num);
+        System.out.println("TOTAL SCORE OF THE RECORDED MATCHES ARE:");
+        System.out.println(total_score);
+        System.out.println("AVERAGE SCORE PER MATCH:");
+        System.out.println(avg);
+    }
+}
